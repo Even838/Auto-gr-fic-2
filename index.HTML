@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos de Atividade dos Grupos</title>
+    <!-- Inclua a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+    <canvas id="myChart"></canvas>
+    <script>
+      
+      
+        // Exemplo de dados (grupo, número de mensagens)
+const dados = [
+    { grupo: "Grupo do evan",
+         mensagens:100},
+         
+    { grupo: "e.p system", 
+         mensagens: 0 },
+    
+    { grupo: "chat geral",
+       mensagens: 1 },
+    
+    { grupo: "artes",
+      mensagens:6},
+    
+    { grupo: "on cactos", 
+       mensagens: 14 },
+       
+    { grupo: "Mikazolandia_Devs", mensagens: 0 },
+    
+    { grupo: "Pumpskin's group", mensagens: 1 },
+    
+    { grupo: "RESENHA DO JUMENTo", mensagens: 1},
+    
+    { grupo: "Coding Dev",
+       mensagens: 0 },
+];
+
+
+
+
+
+
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dados.map(item => item.grupo),
+                datasets: [{
+                    label: 'Número de Mensagens',
+                    data: dados.map(item => item.mensagens),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+ 
